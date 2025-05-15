@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">MyCityApp</string>
+    <string name="mycity_label">My City: %1$s</string>
+    <string name="city_name">Oshawa</string>
+
+    <string name="category_cafes">Coffee Shops</string>
+    <string name="category_restaurants">Restaurants</string>
+    <string name="category_libraries">Public Libraries</string>
+    <string name="category_parks">Public Parks</string>
+    <string name="category_community_centres">Community Centres</string>
+    <string name="category_shopping_centres">Shopping Centres</string>
+
+    <!-- Coffee Shops -->
+    <!-- Restaurants -->
+    <!-- Libraries -->
+    <!-- Parks -->
+    <!-- Community Centres -->
+    <!-- Shopping Centres -->
 </resources>
