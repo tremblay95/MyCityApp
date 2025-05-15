@@ -4,13 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,10 +37,20 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier.padding(8.dp)
+    ) {
+        Text(
+            text = "Hello $name!",
+            style = MaterialTheme.typography.displayLarge
+        )
+        Text(
+            text = "Welcome to ${stringResource(R.string.app_name)}",
+            style = MaterialTheme.typography.titleLarge
+        )
+    }
 }
 
 @Preview(showBackground = true)
