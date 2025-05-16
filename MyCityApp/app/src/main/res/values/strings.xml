@@ -11,9 +11,124 @@
     <string name="category_shopping_centres">Shopping Centres</string>
 
     <!-- Coffee Shops -->
+    <string name="coffin_creek_name">Coffin Creek Cafe</string>
+    <string name="coffin_creek_description">Todo: finish the description for coffin creek cafe.</string>
+    <string name="coffin_creek_address">1413 King St E, Courtice, ON</string>
+
+    <string name="brew_wizards_name">Brew Wizards Board Game Caf\u00e9</string>
+    <string name="brew_wizards_description">Todo: finish the description for brew wizards board game cafe.</string>
+    <string name="brew_wizards_address">75 Celina Str, Oshawa, ON</string>
+
+    <string name="cork_bean_name">Cork \u0026 Bean</string>
+    <string name="cork_bean_description">Todo: finish the description for cork \u0026 bean.</string>
+    <string name="cork_bean_address">8 Simcoe St N, Oshawa, ON</string>
+
+    <string name="bond_st_name">BOND|ST cafe</string>
+    <string name="bond_st_description">Todo: finish the description for bond|st cafe.</string>
+    <string name="bond_st_address">44 Bond St E, Oshawa, ON</string>
+
+    <string name="kareza_cafe_name">Kareza Cafe</string>
+    <string name="kareza_cafe_description">Todo: finish the description for kareza cafe.</string>
+    <string name="kareza_cafe_address">37 Debwewin Miikan, Oshawa, ON</string>
+
     <!-- Restaurants -->
+    <string name="makimono_name">Makimono Sushi Bar \u0026 Restaurant</string>
+    <string name="makimono_description">Todo: finish the description makimono sushi bar \u0026 restaurant.</string>
+    <string name="makimono_address">1300 Harmony Rd N, Oshawa, ON</string>
+
+    <string name="rainbow_name">Rainbow Restaurant</string>
+    <string name="rainbow_description">Todo: finish the description for rainbow restaurant.</string>
+    <string name="rainbow_address">82 Simcoe St N, Oshawa, ON</string>
+
+    <string name="teddys_name">Teddy\'s Restaurant \u0026 Deli</string>
+    <string name="teddys_description">Todo: finish the description for teddy\'s restaurant \u0026 deli.</string>
+    <string name="teddys_address">245 King St W, Oshawa, ON</string>
+
+    <string name="symposium_name">Symposium Cafe Restaurant Oshawa</string>
+    <string name="symposium_description">Todo: finish the description for symposium cafe restaurant.</string>
+    <string name="symposium_address">2630 Simcoe St N, Oshawa, ON</string>
+
+    <string name="portly_piper_name">Portly Piper Pub Oshawa</string>
+    <string name="portly_piper_description">Todo: finish the description for portly piper pub.</string>
+    <string name="portly_piper_address">557 King St E, Oshawa, ON</string>
+
     <!-- Libraries -->
+    <string name="jess_hann_library_name">Oshawa Public Libraries, Jess Hann Branch</string>
+    <string name="jess_hann_library_description">Todo: finish the description for oshawa public libraries jess hann branch</string>
+    <string name="jess_hann_library_address">199 Wentworth St W, Oshawa, ON</string>
+
+    <string name="northview_library_name">Oshawa Public Libraries, Northview Branch</string>
+    <string name="northview_library_description">Todo: finish the description for oshawa public libraries northview branch</string>
+    <string name="northview_library_address">250 Beatrice St E, Oshawa, ON</string>
+
+    <string name="mclaughlin_library_name">Oshawa Public Libraries, McLaughlin Branch</string>
+    <string name="mclaughlin_library_description">Todo: finish the description for oshawa public libraries mclaughlin branch</string>
+    <string name="mclaughlin_library_address">65 Debwewin Miikan, Oshawa, ON</string>
+
+    <string name="delpark_library_name">Oshawa Public Libraries, Delpark Homes Centre Branch</string>
+    <string name="delpark_library_description">Todo: finish the description for oshawa public libraries delpark homes centre branch</string>
+    <string name="delpark_library_address">1661 Harmony Rd N, Oshawa, ON</string>
+
     <!-- Parks -->
+    <string name="niagara_park_name">Niagara Park</string>
+    <string name="niagara_park_description">Todo: finish the description for niagara park.</string>
+    <string name="niagara_park_address">360 Niagara Dr, Oshawa, ON</string>
+
+    <string name="easton_park_name">Easton Park</string>
+    <string name="easton_park_description">Todo: finish the description for easton park.</string>
+    <string name="easton_park_address">~850 Adelaide Ave E, Oshawa, ON</string>
+
+    <string name="lakefront_park_west_name">Lakefront Park West</string>
+    <string name="lakefront_park_west_description">Todo: finish the description for lakefront park west.</string>
+    <string name="lakefront_park_west_address">1221 Phillip Murray Ave, Oshawa, ON</string>
+
+    <string name="stone_street_park_name">Stone Street Park</string>
+    <string name="stone_street_park_description">Todo: finish the description for stone street park.</string>
+    <string name="stone_street_park_address">389 Stone St, Oshawa, ON</string>
+
     <!-- Community Centres -->
+    <string name="south_oshawa_cc_name">South Oshawa Community Centre</string>
+    <string name="south_oshawa_cc_description">Todo: finish the description for south oshawa community centre.</string>
+    <string name="south_oshawa_cc_address">1455 Cedar St, Oshawa, ON</string>
+
+    <string name="civic_rec_complex_name">Civic Recreation Complex</string>
+    <string name="civic_rec_complex_description">Todo: finish the description for civic recreation complex.</string>
+    <string name="civic_rec_complex_address">99 Thornton Rd S, Oshawa, ON</string>
+
+    <string name="tribute_cc_name">Tribute Communities Centre</string>
+    <string name="tribute_cc_description">Todo: finish the description for tribute communities centre.</string>
+    <string name="tribute_cc_address">99 Athol St E, Oshawa, ON</string>
+
+    <string name="delpark_centre_name">Delpark Homes Centre</string>
+    <string name="delpark_centre_description">Todo: finish the description for delpark homes centre.</string>
+    <string name="delpark_centre_address">1661 Harmony Rd N, Oshawa, ON</string>
+
+    <string name="donevan_rec_complex_name">Donevan Recreation Complex</string>
+    <string name="donevan_rec_complex_description">Todo: finish the description for donevan recreation complex.</string>
+    <string name="donevan_rec_complex_address">171 Harmony Rd S, Oshawa, ON</string>
+
     <!-- Shopping Centres -->
+    <string name="oshawa_centre_name">Oshawa Centre</string>
+    <string name="oshawa_centre_description">Todo: finish the description for oshawa centre.</string>
+    <string name="oshawa_centre_address">419 King St W, Oshawa, ON</string>
+
+    <string name="midtown_mall_name">Midtown Mall</string>
+    <string name="midtown_mall_description">Todo: finish the description for midtown mall.</string>
+    <string name="midtown_mall_address">200 John St W, Oshawa, ON</string>
+
+    <string name="townline_centre_name">Townline Centre</string>
+    <string name="townline_centre_description">Todo: finish the description for townline centre.</string>
+    <string name="townline_centre_address">1414 King St E, Courtice, ON</string>
+
+    <string name="ritson_centre_name">Ritson Centre</string>
+    <string name="ritson_centre_description">Todo: finish the description for ritson centre.</string>
+    <string name="ritson_centre_address">300 Taunton Rd E, Oshawa, ON</string>
+
+    <string name="taunton_square_name">Taunton Square</string>
+    <string name="taunton_square_description">Todo: finish the description for taunton square.</string>
+    <string name="taunton_square_address">250 Taunton Rd E, Oshawa, ON</string>
+
+    <string name="smartcentres_name">SmartCentres Oshawa</string>
+    <string name="smartcentres_description">Todo: finish the description for smartcentres oshawa.</string>
+    <string name="smartcentres_address">680 Laval Dr, Oshawa, ON</string>
 </resources>

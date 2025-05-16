@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
@@ -43,11 +44,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier.padding(8.dp)
     ) {
         Text(
-            text = "Hello $name!",
+            text = stringResource(R.string.brew_wizards_name),
+            textAlign = TextAlign.Center,
             style = MaterialTheme.typography.displayLarge
         )
         Text(
-            text = "Welcome to ${stringResource(R.string.app_name)}",
+            text = stringResource(R.string.mycity_label, stringResource(R.string.city_name)),
             style = MaterialTheme.typography.titleLarge
         )
     }
