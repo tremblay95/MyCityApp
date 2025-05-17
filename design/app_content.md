@@ -89,12 +89,3 @@
     
 - <b>Townline Centre</b>
     1414 King St E, Courtice, ON
-
-- <b>Ritson Centre</b>
-    300 Taunton Rd E, Oshawa, ON
-
-- <b>Taunton Square</b>
-    250 Taunton Rd E, Oshawa, ON
-
-- <b>SmartCentres Oshawa</b>
-    680 Laval Dr, Oshawa, ON
