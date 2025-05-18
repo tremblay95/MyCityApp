@@ -95,6 +95,9 @@ socc.png
 civic_rec.jpg
     https://facilities.oshawa.ca/Home/Detail?Id=540015da-1180-4a8a-8e1f-af92154e8213
 
+tribute.jpg
+    https://g.co/kgs/yuUdWg1
+
 delpark_centre.jpg
     https://facilities.oshawa.ca/Home/Detail?Id=64bd8468-c9a4-4050-bf64-a1418cc76fc7
 
