@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyCityApp</string>
+    <string name="app_name">Oshawa - MyCity</string>
     <string name="mycity_label">My City: %1$s</string>
     <string name="city_name">Oshawa</string>
 
