@@ -1,3 +1,6 @@
+I did not take any of the photos in this app.
+The photos used in this app can be found at the urls below.
+
 city_of_oshawa_logo.svg
     https://brandfetch.com/oshawa.ca
 
@@ -19,11 +22,24 @@ kareza_cafe.jpg
     https://g.co/kgs/r2oECwp
 
 
+Brewskies
+
+chronicle_beer.jpg
+    https://chroniclebeer.com/pages/oshawa
+
+all_or_nothing.jpg
+    https://www.facebook.com/share/p/14FFPVi5tk4/
+
+little_beasts.jpg
+    https://notyourchild.com/today-we-feature-the-little-beasts-brewing-company-cheers/
+
+sir_montys.jpg
+    https://www.facebook.com/share/1WvprzQLab/
+
+brock_st.jpg
+    https://g.co/kgs/DfkrbvM
 
 Restaurants
-
-makimono.jpg
-    https://www.facebook.com/share/16RWMTNrse/
 
 rainbow.jpg
     https://www.facebook.com/share/p/1BwWdcSodd/
@@ -31,11 +47,14 @@ rainbow.jpg
 teddys.jpg
     https://www.facebook.com/share/1XyJAdGAZG/
 
-symposium.jpg
-    https://symposiumcafe.com/photos/oshawa
+beertown.jpg
+    https://www.facebook.com/share/p/1LFQT3Sm44/
 
-portly_piper.jpg
-    https://www.facebook.com/share/p/1AcsELSSsi/
+sushi_today.png
+    https://sushitoday.ca/
+
+the_courtyard.jpg
+    https://g.co/kgs/gjxaFjG
 
 
 Libraries

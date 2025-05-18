@@ -4,23 +4,47 @@
 
 - <b>Coffin Creek Cafe</b>,
     1413 King St E, Courtice, ON
+    https://www.coffincreekcoffee.com/
 
 - <b>Brew Wizards Board Game Café</b>,
     75 Celina St, Oshawa, ON
+    https://brewwizards.ca/
 
 - <b>Cork & Bean</b>,
     8 Simcoe St N, Oshawa, ON
+    https://corkandbean.ca/oshawa/
 
 - <b>BOND|ST Cafe</b>,
     44 Bond St E, Oshawa, ON
+    https://www.bondst.ca/cafe
 
 - <b>Kareza Cafe</b>,
     37 Debwewin Miikan, Oshawa, ON
+    https://www.instagram.com/karezacafe
+
+## Brewskies
+
+- <b>Chronicle Brewing Taphouse</b>
+    21 Celina St, Oshawa, ON
+    https://chroniclebeer.com/
+
+- <b>All or Nothing Brewhouse</b>
+    439 Ritson Rd S, Oshawa, ON
+    http://allornothing.beer/
+
+- <b>Little Beasts Brewing Company</b>
+    2075 Forbes St, Whitby, ON
+    https://littlebeastsbrewing.com/
+
+- <b>Sir Monty's Brewing Company</b>
+    1540 Durham Regional Hwy 2, Courtice, ON
+    https://sirmontys.com/
+
+- <b>Brock St Brewing Company</b>
+    244 Brock St S, Whitby, ON
+    http://www.brockstreetbrewing.com/
 
 ## Restaurants
-
-- <b>Makimono Sushi Bar & Restaurant</b>,
-    1300 Harmony Rd N, Oshawa, ON
 
 - <b>Rainbow Restaurant</b>,
     82 Simcoe St N, Oshawa, ON
@@ -28,11 +52,18 @@
 - <b>Teddy's Restaurant & Deli</b>,
     245 King St W, Oshawa, ON
 
-- <b>Symposium Cafe Restaurant Oshawa</b>,
-    2630 Simcoe St N, Oshawa, ON
+- <b>Beertown Public House Whitby</b>
+    75 Consumers Dr, Whitby, ON
+    https://www.beertown.ca/
 
-- <b>Portly Piper Pub Oshawa</b>,
-    557 King St E, Oshawa, ON
+- <b>Sushi Today</b>,
+    1801 Dundas St E, Whitby, ON
+    https://sushitoday.ca/
+
+- <b>The Courtyard</b>
+    1437 King St E, Courtice, ON
+    https://thecourtyardcourtice.com
+
 
 ## Public Libraries
 
