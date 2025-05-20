@@ -4,6 +4,7 @@
     <string name="city_name">Oshawa</string>
 
     <string name="category_cafes">Coffee Shops</string>
+    <string name="category_breweries">Brewskies</string>
     <string name="category_restaurants">Restaurants</string>
     <string name="category_libraries">Public Libraries</string>
     <string name="category_parks">Public Parks</string>
