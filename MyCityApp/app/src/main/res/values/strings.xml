@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Oshawa - MyCity</string>
-    <string name="mycity_label">My City: %1$s</string>
-    <string name="city_name">Oshawa</string>
+    <string name="mycity_label">My City: Oshawa</string>
+    <string name="back_button">Back</string>
 
+    <!-- Categories -->
     <string name="category_cafes">Coffee Shops</string>
     <string name="category_breweries">Brewskies</string>
     <string name="category_restaurants">Restaurants</string>
