@@ -48,7 +48,7 @@ class MyCityViewModel : ViewModel() {
     }
 
     fun getNavBarInfo(currentScreen: CityScreen) : NavBarInfo {
-        @StringRes var titleRes: Int = 0
+        @StringRes var titleRes = 0
         @DrawableRes var iconRes: Int? = null
         @DrawableRes var imageRes: Int? = null
 
@@ -60,7 +60,6 @@ class MyCityViewModel : ViewModel() {
             }
             CityScreen.PlaceDetails -> {
                 titleRes = _uiState.value.currentPlace.nameResource
-                iconRes = _uiState.value.currentCategory.icon
             }
             else -> {
                 titleRes = R.string.mycity_label

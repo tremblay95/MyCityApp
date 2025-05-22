@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import ca.tremblay95.mycityapp.R
 import ca.tremblay95.mycityapp.model.NavBarInfo
@@ -44,7 +45,7 @@ fun MyCityTopBar(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier
-                .padding(vertical = dimensionResource(R.dimen.padding_medium))
+                .padding(bottom = dimensionResource(R.dimen.padding_medium))
                 .fillMaxWidth()
         ) {
             if (canNavigateBack) {
@@ -79,8 +80,10 @@ fun MyCityTopBar(
             }
             Text(
                 text = stringResource(navBarInfo.titleRes),
+                textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.displayMedium,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_small))
             )
         }
     }
@@ -109,6 +112,20 @@ fun PreviewAppBarBack() {
             navBarInfo = NavBarInfo(
                 titleRes = R.string.category_cafes,
                 iconRes = R.drawable.outline_local_cafe_24
+            ),
+            canNavigateBack = true,
+            navigateUp = { }
+        )
+    }
+}
+
+@Preview(name = "App Bar, Yes Back, No Icon", showBackground = true)
+@Composable
+fun PreviewAppBarNoIcon() {
+    MyCityAppTheme {
+        MyCityTopBar(
+            navBarInfo = NavBarInfo(
+                titleRes = R.string.brew_wizards_name
             ),
             canNavigateBack = true,
             navigateUp = { }
