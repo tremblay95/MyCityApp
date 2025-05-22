@@ -21,45 +21,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             MyCityAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MyCityApp()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(modifier: Modifier = Modifier) {
-
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.padding(8.dp)
-    ) {
-        Image(
-            painter = painterResource(R.drawable.brew_wizards),
-            contentDescription = null
-        )
-        Text(
-            text = stringResource(R.string.brew_wizards_name),
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.displayLarge
-        )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyCityAppTheme {
-        Greeting()
     }
 }
