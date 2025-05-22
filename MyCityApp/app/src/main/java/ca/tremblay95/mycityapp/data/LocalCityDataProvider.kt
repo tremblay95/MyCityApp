@@ -5,14 +5,14 @@ import androidx.annotation.StringRes
 import ca.tremblay95.mycityapp.R
 import ca.tremblay95.mycityapp.model.Place
 
-enum class Category(@StringRes title: Int, @DrawableRes icon: Int) {
-    COFFEE_SHOPS(R.string.category_cafes, R.drawable.outline_local_cafe_24),
-    BREWERIES(R.string.category_breweries, R.drawable.outline_local_drink_24),
-    RESTAURANTS(R.string.category_restaurants, R.drawable.outline_local_dining_24),
-    PUBLIC_LIBRARIES(R.string.category_libraries, R.drawable.outline_book_2_24),
-    PARKS(R.string.category_parks, R.drawable.outline_sports_soccer_24),
-    COMMUNITY_CENTRES(R.string.category_community_centres, R.drawable.outline_communities_24),
-    SHOPPING_CENTRES(R.string.category_shopping_centres, R.drawable.outline_shopping_bag_24      )
+enum class Category(@StringRes val title: Int, @DrawableRes val icon: Int) {
+    COFFEE_SHOPS(title = R.string.category_cafes, icon = R.drawable.outline_local_cafe_24),
+    BREWERIES(title = R.string.category_breweries, icon = R.drawable.outline_local_drink_24),
+    RESTAURANTS(title = R.string.category_restaurants, icon = R.drawable.outline_local_dining_24),
+    PUBLIC_LIBRARIES(title = R.string.category_libraries, icon = R.drawable.outline_book_2_24),
+    PARKS(title = R.string.category_parks, icon = R.drawable.outline_sports_soccer_24),
+    COMMUNITY_CENTRES(title = R.string.category_community_centres, icon = R.drawable.outline_communities_24),
+    SHOPPING_CENTRES(title = R.string.category_shopping_centres, icon = R.drawable.outline_shopping_bag_24      )
 }
 
 object LocalCityDataProvider {
@@ -45,13 +45,6 @@ object LocalCityDataProvider {
                 addressResource = R.string.bond_st_address,
                 websiteResource = R.string.bond_st_webpage,
                 imageResource = R.drawable.bondst_cafe
-            ),
-            Place(
-                nameResource = R.string.coffin_creek_name,
-                descriptionResource = R.string.coffin_creek_description,
-                addressResource = R.string.coffin_creek_address,
-                websiteResource = R.string.coffin_creek_webpage,
-                imageResource = R.drawable.coffin_creek
             ),
             Place(
                 nameResource = R.string.kareza_cafe_name,
@@ -262,5 +255,9 @@ object LocalCityDataProvider {
 
     fun getPlacesData(category: Category): List<Place> {
         return cityMap[category] ?: listOf()
+    }
+
+    fun getCategoriesData(): List<Category> {
+        return cityMap.keys.toList()
     }
 }
