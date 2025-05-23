@@ -2,17 +2,26 @@ package ca.tremblay95.mycityapp.data
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FitnessCenter
+import androidx.compose.material.icons.outlined.LocalBar
+import androidx.compose.material.icons.outlined.LocalCafe
+import androidx.compose.material.icons.outlined.LocalDining
+import androidx.compose.material.icons.outlined.LocalLibrary
+import androidx.compose.material.icons.outlined.Park
+import androidx.compose.material.icons.outlined.ShoppingCart
+import androidx.compose.ui.graphics.vector.ImageVector
 import ca.tremblay95.mycityapp.R
 import ca.tremblay95.mycityapp.model.Place
 
-enum class Category(@StringRes val title: Int, @DrawableRes val icon: Int) {
-    COFFEE_SHOPS(title = R.string.category_cafes, icon = R.drawable.outline_local_cafe_24),
-    BREWERIES(title = R.string.category_breweries, icon = R.drawable.outline_local_drink_24),
-    RESTAURANTS(title = R.string.category_restaurants, icon = R.drawable.outline_local_dining_24),
-    PUBLIC_LIBRARIES(title = R.string.category_libraries, icon = R.drawable.outline_book_2_24),
-    PARKS(title = R.string.category_parks, icon = R.drawable.outline_sports_soccer_24),
-    COMMUNITY_CENTRES(title = R.string.category_community_centres, icon = R.drawable.outline_communities_24),
-    SHOPPING_CENTRES(title = R.string.category_shopping_centres, icon = R.drawable.outline_shopping_bag_24      )
+enum class Category(@StringRes val title: Int, val iconImageVector: ImageVector) {
+    COFFEE_SHOPS(title = R.string.category_cafes, iconImageVector = Icons.Outlined.LocalCafe),
+    BREWERIES(title = R.string.category_breweries, iconImageVector = Icons.Outlined.LocalBar),
+    RESTAURANTS(title = R.string.category_restaurants, iconImageVector = Icons.Outlined.LocalDining),
+    PUBLIC_LIBRARIES(title = R.string.category_libraries, iconImageVector = Icons.Outlined.LocalLibrary),
+    PARKS(title = R.string.category_parks, iconImageVector = Icons.Outlined.Park),
+    COMMUNITY_CENTRES(title = R.string.category_community_centres, iconImageVector = Icons.Outlined.FitnessCenter),
+    SHOPPING_CENTRES(title = R.string.category_shopping_centres, iconImageVector = Icons.Outlined.ShoppingCart)
 }
 
 object LocalCityDataProvider {

@@ -1,6 +1,7 @@
 package ca.tremblay95.mycityapp
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -13,6 +14,7 @@ import ca.tremblay95.mycityapp.ui.CityListView
 import ca.tremblay95.mycityapp.ui.CityScreen
 import ca.tremblay95.mycityapp.ui.MyCityTopBar
 import ca.tremblay95.mycityapp.ui.MyCityViewModel
+import ca.tremblay95.mycityapp.ui.PlaceDetailsView
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
 
 
@@ -25,6 +27,8 @@ fun MyCityApp(
     val currentScreen = CityScreen.valueOf(
         backStackEntry?.destination?.route ?: CityScreen.CategoriesList.name
     )
+
+    val cityUiState = viewModel.uiState.collectAsState().value
 
     NavHost(
         navController = navController,
@@ -63,13 +67,11 @@ fun MyCityApp(
             )
         }
         composable(CityScreen.PlaceDetails.name) {
-            val navBarInfo = viewModel.getNavBarInfo(currentScreen)
-            MyCityTopBar(
-                navBarInfo = navBarInfo,
+            PlaceDetailsView(
                 canNavigateBack = navController.previousBackStackEntry != null,
                 navigateUp = { navController.navigateUp() },
+                viewModel = viewModel
             )
-            // todo: place details composable
         }
     }
 }

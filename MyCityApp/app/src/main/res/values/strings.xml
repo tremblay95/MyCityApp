@@ -91,22 +91,22 @@
     <string name="courtyard_webpage">https://thecourtyardcourtice.com</string>
 
     <!-- Libraries -->
-    <string name="jess_hann_library_name">Oshawa Public Libraries, Jess Hann Branch</string>
+    <string name="jess_hann_library_name">Jess Hann Branch</string>
     <string name="jess_hann_library_description">Todo: finish the description for oshawa public libraries jess hann branch</string>
     <string name="jess_hann_library_address">199 Wentworth St W, Oshawa, ON</string>
     <string name="jess_hann_library_webpage">https://oshawalibrary.ca/locations/jess_hann/</string>
 
-    <string name="northview_library_name">Oshawa Public Libraries, Northview Branch</string>
+    <string name="northview_library_name">Northview Branch</string>
     <string name="northview_library_description">Todo: finish the description for oshawa public libraries northview branch</string>
     <string name="northview_library_address">250 Beatrice St E, Oshawa, ON</string>
     <string name="northview_library_webpage">https://oshawalibrary.ca/locations/NORTHVIEW/</string>
 
-    <string name="mclaughlin_library_name">Oshawa Public Libraries, McLaughlin Branch</string>
+    <string name="mclaughlin_library_name">McLaughlin Branch</string>
     <string name="mclaughlin_library_description">Todo: finish the description for oshawa public libraries mclaughlin branch</string>
     <string name="mclaughlin_library_address">65 Debwewin Miikan, Oshawa, ON</string>
     <string name="mclaughlin_library_webpage">https://oshawalibrary.ca/locations/MCLAUGHLIN/</string>
 
-    <string name="delpark_library_name">Oshawa Public Libraries, Delpark Homes Centre Branch</string>
+    <string name="delpark_library_name">Delpark Homes Centre Branch</string>
     <string name="delpark_library_description">Todo: finish the description for oshawa public libraries delpark homes centre branch</string>
     <string name="delpark_library_address">1661 Harmony Rd N, Oshawa, ON</string>
     <string name="delpark_library_webpage">https://oshawalibrary.ca/locations/DELPARK/</string>
@@ -173,4 +173,6 @@
     <string name="townline_centre_description">Todo: finish the description for townline centre.</string>
     <string name="townline_centre_address">1414 King St E, Courtice, ON</string>
     <string name="townline_centre_webpage">https://www.salthillcapital.com/portfolio/townline-shopping-centre</string>
+    <string name="expand_content_description">See full or cropped image</string>
+    <string name="website_label">Website</string>
 </resources>

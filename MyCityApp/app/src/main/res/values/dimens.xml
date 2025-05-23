@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_extra_small">8.dp</dimen>
-    <dimen name="padding_small">16.dp</dimen>
-    <dimen name="padding_medium">32.dp</dimen>
+    <dimen name="padding_small">8.dp</dimen>
+    <dimen name="padding_medium">16.dp</dimen>
+    <dimen name="padding_large">32.dp</dimen>
     <dimen name="list_item_icon_size_compact">32.dp</dimen>
     <dimen name="list_item_space_compact">48.dp</dimen>
     <dimen name="top_bar_image_size">120.dp</dimen>

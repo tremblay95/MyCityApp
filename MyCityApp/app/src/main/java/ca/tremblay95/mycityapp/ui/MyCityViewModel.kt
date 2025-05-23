@@ -2,6 +2,7 @@ package ca.tremblay95.mycityapp.ui
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.ViewModel
 import ca.tremblay95.mycityapp.R
 import ca.tremblay95.mycityapp.data.Category
@@ -26,7 +27,10 @@ class MyCityViewModel : ViewModel() {
 
     fun updateCurrentPlace(selectedPlace: Place) {
         _uiState.update {
-            it.copy(currentPlace = selectedPlace)
+            it.copy(
+                currentPlace = selectedPlace,
+                placeImageExpanded = false
+            )
         }
     }
 
@@ -35,7 +39,14 @@ class MyCityViewModel : ViewModel() {
             it.copy(
                 currentCategory = selectedCategory,
                 currentPlace = LocalCityDataProvider.getPlacesData(selectedCategory).first(),
+                placeImageExpanded = false
             )
+        }
+    }
+
+    fun togglePlaceImageExpanded() {
+        _uiState.update {
+            it.copy(placeImageExpanded = !it.placeImageExpanded)
         }
     }
 
@@ -47,16 +58,20 @@ class MyCityViewModel : ViewModel() {
         return LocalCityDataProvider.getPlacesData(_uiState.value.currentCategory)
     }
 
+    fun getCurrentPlace()  : Place {
+        return _uiState.value.currentPlace
+    }
+
     fun getNavBarInfo(currentScreen: CityScreen) : NavBarInfo {
         @StringRes var titleRes = 0
-        @DrawableRes var iconRes: Int? = null
+        var iconImageVector: ImageVector? = null
         @DrawableRes var imageRes: Int? = null
 
         when(currentScreen) {
             CityScreen.PlacesList -> {
                 val category =  _uiState.value.currentCategory
                 titleRes = category.title
-                iconRes = category.icon
+                iconImageVector = category.iconImageVector
             }
             CityScreen.PlaceDetails -> {
                 titleRes = _uiState.value.currentPlace.nameResource
@@ -67,6 +82,6 @@ class MyCityViewModel : ViewModel() {
             }
         }
 
-        return NavBarInfo(titleRes, iconRes, imageRes)
+        return NavBarInfo(titleRes, iconImageVector, imageRes)
     }
 }

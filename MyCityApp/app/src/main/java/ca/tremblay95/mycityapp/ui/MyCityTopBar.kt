@@ -10,11 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.outlined.LocalCafe
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,12 +42,12 @@ fun MyCityTopBar(
 ) {
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-        modifier = modifier.padding(horizontal = dimensionResource(R.dimen.padding_extra_small))
+        modifier = modifier.padding(horizontal = dimensionResource(R.dimen.padding_small))
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier
-                .padding(bottom = dimensionResource(R.dimen.padding_medium))
+                .padding(bottom = dimensionResource(R.dimen.padding_large))
                 .fillMaxWidth()
         ) {
             if (canNavigateBack) {
@@ -54,7 +56,8 @@ fun MyCityTopBar(
                         .fillMaxWidth()
                 ) {
                     IconButton(
-                        onClick = navigateUp
+                        onClick = navigateUp,
+                        colors = IconButtonDefaults.iconButtonColors(containerColor = MaterialTheme.colorScheme.surfaceContainer)
                     ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -70,9 +73,9 @@ fun MyCityTopBar(
                     modifier = Modifier.size(dimensionResource(R.dimen.top_bar_image_size))
                 )
             }
-            if (navBarInfo.iconRes != null) {
+            if (navBarInfo.iconImageVector != null) {
                 Icon(
-                    painter = painterResource(navBarInfo.iconRes),
+                    imageVector = navBarInfo.iconImageVector,
                     contentDescription = null,
                     modifier = Modifier.size(dimensionResource(R.dimen.top_bar_icon_size))
                 )
@@ -83,7 +86,7 @@ fun MyCityTopBar(
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.displayMedium,
                 color = MaterialTheme.colorScheme.onPrimaryContainer,
-                modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_small))
+                modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_medium))
             )
         }
     }
@@ -111,7 +114,7 @@ fun PreviewAppBarBack() {
         MyCityTopBar(
             navBarInfo = NavBarInfo(
                 titleRes = R.string.category_cafes,
-                iconRes = R.drawable.outline_local_cafe_24
+                iconImageVector = Icons.Outlined.LocalCafe
             ),
             canNavigateBack = true,
             navigateUp = { }

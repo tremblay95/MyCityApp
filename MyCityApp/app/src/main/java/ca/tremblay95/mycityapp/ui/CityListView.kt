@@ -1,6 +1,5 @@
 package ca.tremblay95.mycityapp.ui
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -22,8 +21,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -43,7 +42,7 @@ fun CityListView(
     placesList: List<Place>? = null
 ) {
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_extra_small)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         modifier = modifier
             .fillMaxSize()
             .padding(WindowInsets.safeDrawing.asPaddingValues())
@@ -55,7 +54,7 @@ fun CityListView(
             items(categoriesList) {
                 CityListItem(
                     nameRes = it.title,
-                    iconRes = it.icon
+                    iconImageVector = it.iconImageVector
                 ) { onCategorySelected(it) }
             }
         } else if (placesList != null) {
@@ -70,25 +69,25 @@ fun CityListView(
 private fun CityListItem(
     @StringRes nameRes: Int,
     modifier: Modifier = Modifier,
-    @DrawableRes iconRes: Int? = null,
+    iconImageVector: ImageVector? = null,
     onCardClick: () -> Unit = {}
 ) {
     Card(
         onClick = onCardClick,
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = dimensionResource(R.dimen.padding_extra_small))
+            .padding(horizontal = dimensionResource(R.dimen.padding_small))
     ) {
         Row(
-            horizontalArrangement = if (iconRes != null) { Arrangement.Start } else { Arrangement.Center },
+            horizontalArrangement = if (iconImageVector != null) { Arrangement.Start } else { Arrangement.Center },
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(dimensionResource(R.dimen.padding_medium))
+                .padding(dimensionResource(R.dimen.padding_large))
         ) {
-            if (iconRes != null) {
+            if (iconImageVector != null) {
                 Icon(
-                    painter = painterResource(iconRes),
+                    imageVector = iconImageVector,
                     contentDescription = null,
                     modifier = Modifier.size(dimensionResource(R.dimen.list_item_icon_size_compact))
                 )

@@ -8,5 +8,5 @@ data class Place(
     @StringRes val descriptionResource: Int,
     @StringRes val addressResource: Int,
     @StringRes val websiteResource: Int,
-    @DrawableRes val imageResource: Int? = null
+    @DrawableRes val imageResource: Int
 )
