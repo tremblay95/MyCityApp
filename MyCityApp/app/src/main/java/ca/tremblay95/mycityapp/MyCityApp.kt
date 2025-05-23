@@ -1,8 +1,14 @@
 package ca.tremblay95.mycityapp
 
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -15,13 +21,16 @@ import ca.tremblay95.mycityapp.ui.CityScreen
 import ca.tremblay95.mycityapp.ui.MyCityTopBar
 import ca.tremblay95.mycityapp.ui.MyCityViewModel
 import ca.tremblay95.mycityapp.ui.PlaceDetailsView
+import ca.tremblay95.mycityapp.ui.PlaceDetailsViewLandscape
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
 
 
 @Composable
 fun MyCityApp(
+    windowSize: WindowWidthSizeClass,
     viewModel: MyCityViewModel = viewModel(),
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
+    modifier: Modifier = Modifier
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = CityScreen.valueOf(
@@ -32,7 +41,7 @@ fun MyCityApp(
 
     NavHost(
         navController = navController,
-        startDestination = CityScreen.CategoriesList.name
+        startDestination = CityScreen.CategoriesList.name,
     ) {
         composable(CityScreen.CategoriesList.name) {
             CityListView(
@@ -47,7 +56,8 @@ fun MyCityApp(
                 onCategorySelected = {
                     viewModel.updateCurrentCategory(it)
                     navController.navigate(CityScreen.PlacesList.name)
-                }
+                },
+                modifier = modifier
             )
         }
         composable(CityScreen.PlacesList.name) {
@@ -63,15 +73,30 @@ fun MyCityApp(
                 onPlaceSelected = {
                     viewModel.updateCurrentPlace(it)
                     navController.navigate(CityScreen.PlaceDetails.name)
-                }
+                },
+                modifier = modifier
             )
         }
         composable(CityScreen.PlaceDetails.name) {
-            PlaceDetailsView(
-                canNavigateBack = navController.previousBackStackEntry != null,
-                navigateUp = { navController.navigateUp() },
-                viewModel = viewModel
-            )
+            when (windowSize) {
+                WindowWidthSizeClass.Compact -> {
+                    PlaceDetailsView(
+                        canNavigateBack = navController.previousBackStackEntry != null,
+                        navigateUp = { navController.navigateUp() },
+                        viewModel = viewModel,
+                        modifier = modifier
+                    )
+                }
+                else -> {
+                    PlaceDetailsViewLandscape(
+                        canNavigateBack = navController.previousBackStackEntry != null,
+                        navigateUp = { navController.navigateUp() },
+                        viewModel = viewModel,
+                        modifier = modifier
+                    )
+                }
+            }
+
         }
     }
 }
@@ -80,6 +105,6 @@ fun MyCityApp(
 @Composable
 fun PreviewMyCityApp() {
     MyCityAppTheme {
-        MyCityApp()
+        MyCityApp(windowSize = WindowWidthSizeClass.Compact)
     }
 }

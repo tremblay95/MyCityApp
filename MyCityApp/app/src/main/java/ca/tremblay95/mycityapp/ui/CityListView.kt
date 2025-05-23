@@ -45,7 +45,6 @@ fun CityListView(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         modifier = modifier
             .fillMaxSize()
-            .padding(WindowInsets.safeDrawing.asPaddingValues())
     ) {
         item {
             topBar()

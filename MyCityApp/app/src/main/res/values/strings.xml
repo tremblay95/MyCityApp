@@ -14,7 +14,9 @@
 
     <!-- Coffee Shops -->
     <string name="coffin_creek_name">Coffin Creek Cafe</string>
-    <string name="coffin_creek_description">Todo: finish the description for coffin creek cafe.</string>
+    <string name="coffin_creek_description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor velit quis risus pharetra elementum. Maecenas vehicula venenatis odio, a sollicitudin lectus laoreet malesuada. Phasellus sit amet accumsan orci, at auctor ipsum. Duis auctor orci ut odio fermentum, a sodales libero euismod. Sed laoreet ligula nec lectus egestas ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc fringilla orci a lacus aliquam molestie. Maecenas mollis pulvinar pharetra. Proin malesuada, velit a sollicitudin maximus, ex massa ultricies ipsum, eget laoreet sapien magna nec nibh. Proin maximus erat et vulputate congue. Vivamus fringilla non sapien id pellentesque. Phasellus eget convallis purus. Phasellus rutrum tincidunt pellentesque. Integer volutpat iaculis felis, at facilisis turpis dignissim ut. Morbi in eros vitae ex iaculis venenatis.
+    </string>
     <string name="coffin_creek_address">1413 King St E, Courtice, ON</string>
     <string name="coffin_creek_webpage">https://www.coffincreekcoffee.com/</string>
 
