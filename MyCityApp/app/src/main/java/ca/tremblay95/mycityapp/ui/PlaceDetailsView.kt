@@ -55,7 +55,7 @@ fun PlaceDetailsView(
     viewModel: MyCityViewModel = viewModel()
 ) {
     val cityUiState by viewModel.uiState.collectAsState()
-    val place = cityUiState.currentPlace
+    val place = viewModel.getCurrentPlace()
 
     val context = LocalContext.current
     val url = stringResource(place.websiteResource)
