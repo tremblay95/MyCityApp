@@ -1,9 +1,5 @@
 package ca.tremblay95.mycityapp
 
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -21,7 +17,6 @@ import ca.tremblay95.mycityapp.ui.CityScreen
 import ca.tremblay95.mycityapp.ui.MyCityTopBar
 import ca.tremblay95.mycityapp.ui.MyCityViewModel
 import ca.tremblay95.mycityapp.ui.PlaceDetailsView
-import ca.tremblay95.mycityapp.ui.PlaceDetailsViewLandscape
 import ca.tremblay95.mycityapp.ui.theme.MyCityAppTheme
 
 
@@ -78,25 +73,13 @@ fun MyCityApp(
             )
         }
         composable(CityScreen.PlaceDetails.name) {
-            when (windowSize) {
-                WindowWidthSizeClass.Compact -> {
-                    PlaceDetailsView(
-                        canNavigateBack = navController.previousBackStackEntry != null,
-                        navigateUp = { navController.navigateUp() },
-                        viewModel = viewModel,
-                        modifier = modifier
-                    )
-                }
-                else -> {
-                    PlaceDetailsViewLandscape(
-                        canNavigateBack = navController.previousBackStackEntry != null,
-                        navigateUp = { navController.navigateUp() },
-                        viewModel = viewModel,
-                        modifier = modifier
-                    )
-                }
-            }
-
+            PlaceDetailsView(
+                canNavigateBack = navController.previousBackStackEntry != null,
+                navigateUp = { navController.navigateUp() },
+                viewModel = viewModel,
+                modifier = modifier,
+                windowSize = windowSize
+            )
         }
     }
 }

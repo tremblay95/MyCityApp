@@ -55,15 +55,7 @@ fun MyCityTopBar(
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    IconButton(
-                        onClick = navigateUp,
-                        colors = IconButtonDefaults.iconButtonColors(containerColor = MaterialTheme.colorScheme.surfaceContainer)
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.back_button)
-                        )
-                    }
+                    BackButton(navigateUp = navigateUp)
                 }
             }
             if (navBarInfo.imageRes != null) {
