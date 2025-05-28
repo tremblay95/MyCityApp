@@ -2,6 +2,7 @@ package ca.tremblay95.mycityapp.ui
 
 import android.content.Intent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -90,69 +91,19 @@ private fun PlaceDetailsViewPortrait(
     modifier: Modifier = Modifier,
     viewModel: MyCityViewModel = viewModel()
 ) {
+    val scrollState = rememberScrollState()
+
     val cityUiState by viewModel.uiState.collectAsState()
     val place = viewModel.getCurrentPlace()
 
     Box(modifier = modifier.fillMaxWidth())
     {
-        LazyColumn(
+        Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier
                 .fillMaxSize()
+                .verticalScroll(scrollState)
         ) {
-            item {
-                Image(
-                    painter = painterResource(place.imageResource),
-                    contentDescription = stringResource(R.string.expand_content_description),
-                    contentScale = ContentScale.FillWidth,
-                    alignment = Alignment.TopCenter,
-                    modifier =
-                        if (cityUiState.placeImageExpanded) Modifier else { Modifier.aspectRatio(16f / 9f) }
-                            .padding(
-                                start = dimensionResource(R.dimen.padding_small),
-                                end = dimensionResource(R.dimen.padding_small),
-                                top = dimensionResource(R.dimen.padding_small)
-                            )
-                            .fillMaxWidth()
-                            .clip(shape = RoundedCornerShape(8.dp))
-                            .clickable(
-                                onClick = { viewModel.togglePlaceImageExpanded() }
-                            )
-                )
-            }
-            item {
-                DetailsCard(place = place)
-            }
-        }
-
-        if (canNavigateBack) {
-            BackButton(
-                navigateUp = navigateUp,
-                modifier = Modifier
-                    .align(Alignment.TopStart)
-                    .offset(x = dimensionResource(R.dimen.padding_small), y = dimensionResource(R.dimen.padding_small))
-            )
-        }
-    }
-}
-
-@Composable
-private fun PlaceDetailsViewPortrait_old(
-    canNavigateBack: Boolean,
-    navigateUp: () -> Unit,
-    modifier: Modifier = Modifier,
-    viewModel: MyCityViewModel = viewModel()
-) {
-    val cityUiState by viewModel.uiState.collectAsState()
-    val place = viewModel.getCurrentPlace()
-
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.fillMaxWidth()
-    )
-    {
-        Box(
-            modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = painterResource(place.imageResource),
                 contentDescription = stringResource(R.string.expand_content_description),
@@ -171,28 +122,19 @@ private fun PlaceDetailsViewPortrait_old(
                             onClick = { viewModel.togglePlaceImageExpanded() }
                         )
             )
-            if (canNavigateBack) {
-                IconButton(
-                    onClick = navigateUp,
-                    colors = IconButtonDefaults.iconButtonColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
-                    modifier = Modifier
-                        .align(Alignment.TopStart)
-                        .offset(x = dimensionResource(R.dimen.padding_small), y = dimensionResource(R.dimen.padding_small))
-                ) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = stringResource(R.string.back_button),
-                    )
-                }
-            }
+            DetailsCard(
+                place = place,
+                canScroll = false
+            )
         }
-        LazyColumn {
-            item {
-                DetailsCard(
-                    place = place,
-                    modifier = Modifier.fillParentMaxHeight()
-                )
-            }
+
+        if (canNavigateBack) {
+            BackButton(
+                navigateUp = navigateUp,
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .offset(x = dimensionResource(R.dimen.padding_small), y = dimensionResource(R.dimen.padding_small))
+            )
         }
     }
 }
@@ -204,7 +146,6 @@ private fun PlaceDetailsViewLandscape(
     modifier: Modifier = Modifier,
     viewModel: MyCityViewModel = viewModel()
 ) {
-    val cityUiState by viewModel.uiState.collectAsState()
     val place = viewModel.getCurrentPlace()
 
     Row(modifier = modifier.fillMaxWidth())
@@ -234,20 +175,15 @@ private fun PlaceDetailsViewLandscape(
                 )
             }
         }
-        LazyColumn {
-            item {
-                DetailsCard(
-                    place = place,
-                    modifier = Modifier.fillParentMaxHeight()
-                )
-            }
-        }
+
+        DetailsCard(place = place)
     }
 }
 
 @Composable
 private fun DetailsCard(
     place: Place,
+    canScroll: Boolean = true,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -259,9 +195,14 @@ private fun DetailsCard(
             .padding(dimensionResource(R.dimen.padding_small))
             .fillMaxSize()
     ) {
+        val scrollState = rememberScrollState()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = modifier.padding(dimensionResource(R.dimen.padding_small))
+            modifier = if (canScroll) {
+                modifier.verticalScroll(
+                    state = scrollState)
+            } else { modifier }
+                .padding(dimensionResource(R.dimen.padding_small))
         ) {
             Text(
                 text = stringResource(place.nameResource),
