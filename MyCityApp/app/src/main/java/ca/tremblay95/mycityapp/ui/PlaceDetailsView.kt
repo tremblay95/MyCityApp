@@ -91,9 +91,8 @@ private fun PlaceDetailsViewPortrait(
     modifier: Modifier = Modifier,
     viewModel: MyCityViewModel = viewModel()
 ) {
-    val scrollState = rememberScrollState()
-
-    val cityUiState by viewModel.uiState.collectAsState()
+    val scrollState = ScrollState(0)
+    var placeImageExpanded = false
     val place = viewModel.getCurrentPlace()
 
     Box(modifier = modifier.fillMaxWidth())
@@ -110,7 +109,7 @@ private fun PlaceDetailsViewPortrait(
                 contentScale = ContentScale.FillWidth,
                 alignment = Alignment.TopCenter,
                 modifier =
-                    if (cityUiState.placeImageExpanded) Modifier else { Modifier.aspectRatio(16f / 9f) }
+                    if (placeImageExpanded) Modifier else { Modifier.aspectRatio(16f / 9f) }
                         .padding(
                             start = dimensionResource(R.dimen.padding_small),
                             end = dimensionResource(R.dimen.padding_small),
@@ -119,7 +118,7 @@ private fun PlaceDetailsViewPortrait(
                         .fillMaxWidth()
                         .clip(shape = RoundedCornerShape(8.dp))
                         .clickable(
-                            onClick = { viewModel.togglePlaceImageExpanded() }
+                            onClick = { placeImageExpanded = !placeImageExpanded }
                         )
             )
             DetailsCard(

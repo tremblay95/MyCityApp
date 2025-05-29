@@ -28,8 +28,7 @@ class MyCityViewModel : ViewModel() {
     fun updateCurrentPlace(selectedPlace: Place) {
         _uiState.update {
             it.copy(
-                currentPlace = selectedPlace,
-                placeImageExpanded = false
+                currentPlace = selectedPlace
             )
         }
     }
@@ -38,15 +37,8 @@ class MyCityViewModel : ViewModel() {
         _uiState.update {
             it.copy(
                 currentCategory = selectedCategory,
-                currentPlace = LocalCityDataProvider.getPlacesData(selectedCategory).first(),
-                placeImageExpanded = false
+                currentPlace = LocalCityDataProvider.getPlacesData(selectedCategory).first()
             )
-        }
-    }
-
-    fun togglePlaceImageExpanded() {
-        _uiState.update {
-            it.copy(placeImageExpanded = !it.placeImageExpanded)
         }
     }
 
@@ -73,12 +65,12 @@ class MyCityViewModel : ViewModel() {
                 titleRes = category.title
                 iconImageVector = category.iconImageVector
             }
-            CityScreen.PlaceDetails -> {
-                titleRes = _uiState.value.currentPlace.nameResource
-            }
-            else -> {
+            CityScreen.CategoriesList -> {
                 titleRes = R.string.mycity_label
                 imageRes = R.drawable.city_of_oshawa_logo
+            }
+            else -> {
+                // do nothing
             }
         }
 
