@@ -27,13 +27,6 @@ fun MyCityApp(
     navController: NavHostController = rememberNavController(),
     modifier: Modifier = Modifier
 ) {
-    val backStackEntry by navController.currentBackStackEntryAsState()
-    val currentScreen = CityScreen.valueOf(
-        backStackEntry?.destination?.route ?: CityScreen.CategoriesList.name
-    )
-
-    val cityUiState = viewModel.uiState.collectAsState().value
-
     NavHost(
         navController = navController,
         startDestination = CityScreen.CategoriesList.name,
@@ -41,7 +34,7 @@ fun MyCityApp(
         composable(CityScreen.CategoriesList.name) {
             CityListView(
                 topBar = @Composable {
-                    val navBarInfo = viewModel.getNavBarInfo(currentScreen)
+                    val navBarInfo = viewModel.getNavBarInfo(CityScreen.CategoriesList)
                     MyCityTopBar(
                         navBarInfo = navBarInfo,
                         canNavigateBack = navController.previousBackStackEntry != null,
@@ -58,7 +51,7 @@ fun MyCityApp(
         composable(CityScreen.PlacesList.name) {
             CityListView(
                 topBar = @Composable {
-                    val navBarInfo = viewModel.getNavBarInfo(currentScreen)
+                    val navBarInfo = viewModel.getNavBarInfo(CityScreen.PlacesList)
                     MyCityTopBar(
                         navBarInfo = navBarInfo,
                         canNavigateBack = navController.previousBackStackEntry != null,
