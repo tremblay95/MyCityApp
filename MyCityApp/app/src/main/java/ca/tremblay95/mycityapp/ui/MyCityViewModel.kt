@@ -70,7 +70,7 @@ class MyCityViewModel : ViewModel() {
                 imageRes = R.drawable.city_of_oshawa_logo
             }
             else -> {
-                // do nothing
+                titleRes = R.string.mycity_label
             }
         }
 
