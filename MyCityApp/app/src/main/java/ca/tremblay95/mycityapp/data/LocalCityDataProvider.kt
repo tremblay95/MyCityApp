@@ -1,6 +1,5 @@
 package ca.tremblay95.mycityapp.data
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.FitnessCenter

@@ -59,19 +59,14 @@ class MyCityViewModel : ViewModel() {
         var iconImageVector: ImageVector? = null
         @DrawableRes var imageRes: Int? = null
 
-        when(currentScreen) {
-            CityScreen.PlacesList -> {
-                val category =  _uiState.value.currentCategory
-                titleRes = category.title
-                iconImageVector = category.iconImageVector
-            }
-            CityScreen.CategoriesList -> {
-                titleRes = R.string.mycity_label
-                imageRes = R.drawable.city_of_oshawa_logo
-            }
-            else -> {
-                // do nothing
-            }
+        if (currentScreen == CityScreen.PlacesList) {
+            val category =  _uiState.value.currentCategory
+            titleRes = category.title
+            iconImageVector = category.iconImageVector
+        }
+        else if (currentScreen == CityScreen.CategoriesList) {
+            titleRes = R.string.mycity_label
+            imageRes = R.drawable.city_of_oshawa_logo
         }
 
         return NavBarInfo(titleRes, iconImageVector, imageRes)
