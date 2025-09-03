@@ -24,6 +24,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -80,7 +82,7 @@ private fun PlaceDetailsViewPortrait(
     viewModel: MyCityViewModel = viewModel()
 ) {
     val scrollState = ScrollState(0)
-    var placeImageExpanded = false
+    var imageExpanded = remember { mutableStateOf(false) }
     val place = viewModel.getCurrentPlace()
 
     Box(modifier = modifier.fillMaxWidth())
@@ -97,7 +99,7 @@ private fun PlaceDetailsViewPortrait(
                 contentScale = ContentScale.FillWidth,
                 alignment = Alignment.TopCenter,
                 modifier =
-                    if (placeImageExpanded) Modifier else { Modifier.aspectRatio(16f / 9f) }
+                    if (imageExpanded.value) Modifier else { Modifier.aspectRatio(16f / 9f) }
                         .padding(
                             start = dimensionResource(R.dimen.padding_small),
                             end = dimensionResource(R.dimen.padding_small),
@@ -106,7 +108,10 @@ private fun PlaceDetailsViewPortrait(
                         .fillMaxWidth()
                         .clip(shape = RoundedCornerShape(8.dp))
                         .clickable(
-                            onClick = { placeImageExpanded = !placeImageExpanded }
+                            onClick = {
+                                imageExpanded.value = !imageExpanded.value
+                                println("WTF")
+                            }
                         )
             )
             DetailsCard(
