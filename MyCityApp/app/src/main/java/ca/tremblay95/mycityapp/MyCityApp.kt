@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ca.tremblay95.mycityapp.ui.CityListItem
 import ca.tremblay95.mycityapp.ui.CityListView
 import ca.tremblay95.mycityapp.ui.CityScreen
 import ca.tremblay95.mycityapp.ui.MyCityTopBar
@@ -37,10 +38,16 @@ fun MyCityApp(
                         canNavigateBack = navController.previousBackStackEntry != null,
                         navigateUp = { navController.navigateUp() },
                     ) },
-                categoriesList = viewModel.getCategoriesList(),
-                onCategorySelected = {
-                    viewModel.updateCurrentCategory(it)
-                    navController.navigate(CityScreen.PlacesList.name)
+                listItems = viewModel.getCategoriesList().map { category ->
+                    @Composable () {
+                        CityListItem(
+                            nameRes = category.title,
+                            iconImageVector = category.iconImageVector
+                        ) {
+                            viewModel.updateCurrentCategory(category)
+                            navController.navigate(CityScreen.PlacesList.name)
+                        }
+                    }
                 },
                 modifier = modifier
             )
@@ -54,10 +61,15 @@ fun MyCityApp(
                         canNavigateBack = navController.previousBackStackEntry != null,
                         navigateUp = { navController.navigateUp() },
                     ) },
-                placesList = viewModel.getPlacesList(),
-                onPlaceSelected = {
-                    viewModel.updateCurrentPlace(it)
-                    navController.navigate(CityScreen.PlaceDetails.name)
+                listItems = viewModel.getPlacesList().map { place ->
+                    @Composable () {
+                        CityListItem(
+                            nameRes = place.nameResource
+                        ) {
+                            viewModel.updateCurrentPlace(place)
+                            navController.navigate(CityScreen.PlaceDetails.name)
+                        }
+                    }
                 },
                 modifier = modifier
             )
