@@ -110,7 +110,6 @@ private fun PlaceDetailsViewPortrait(
                         .clickable(
                             onClick = {
                                 imageExpanded.value = !imageExpanded.value
-                                println("WTF")
                             }
                         )
             )
